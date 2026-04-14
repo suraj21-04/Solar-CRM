@@ -1,0 +1,205 @@
+/* Pricing Page Styles */
+.pricing-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-slate-900);
+    margin-bottom: 20px;
+}
+
+.pricing-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-slate-600);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Toggle Switch */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+.toggle-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-slate-600);
+    cursor: pointer;
+}
+
+.toggle-label.active {
+    color: var(--text-slate-900);
+    font-weight: 700;
+}
+
+.toggle-switch {
+    width: 64px;
+    height: 32px;
+    background-color: var(--amber-500);
+    border-radius: 9999px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-slider {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.toggle-switch.annual .toggle-slider {
+    transform: translateX(32px);
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+}
+
+.pricing-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-slate-200);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.popular {
+    border-color: var(--amber-500);
+    border-width: 2px;
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--amber-500);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.plan-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-slate-900);
+    margin-bottom: 12px;
+}
+
+.plan-desc {
+    font-size: 0.875rem;
+    color: var(--text-slate-500);
+    margin-bottom: 24px;
+    min-height: 48px;
+}
+
+.plan-price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-slate-900);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-slate-500);
+    margin-left: 4px;
+}
+
+.plan-price-period {
+    font-size: 0.875rem;
+    color: var(--text-slate-500);
+    margin-bottom: 32px;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    color: var(--text-slate-700);
+}
+
+.feature-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--emerald-500);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.btn-pricing {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-pricing-secondary {
+    background-color: var(--bg-slate-50);
+    color: var(--text-slate-900);
+    border: 1px solid var(--border-slate-200);
+}
+
+.btn-pricing-secondary:hover {
+    background-color: var(--bg-slate-100);
+    border-color: var(--border-slate-300);
+}
+
+.btn-pricing-primary {
+    background-color: var(--amber-500);
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+}
+
+.btn-pricing-primary:hover {
+    background-color: var(--amber-600);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.23);
+}

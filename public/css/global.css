@@ -1,0 +1,121 @@
+:root {
+    --primary-amber: #f59e0b;
+    --primary-amber-hover: #d97706;
+    --text-slate-900: #0f172a;
+    --text-slate-700: #334155;
+    --text-slate-600: #475569;
+    --text-slate-500: #64748b;
+    --text-slate-400: #94a3b8;
+    --bg-white: #ffffff;
+    --bg-slate-50: #f8fafc;
+    --bg-slate-100: #f1f5f9;
+    --border-slate-100: #f1f5f9;
+    --border-slate-200: #e2e8f0;
+    --border-slate-300: #cbd5e1;
+    --emerald-100: #d1fae5;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --blue-100: #dbeafe;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --amber-100: #fef3c7;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --purple-100: #f3e8ff;
+    --purple-500: #a855f7;
+    --purple-600: #9333ea;
+    --font-inter: 'Inter', sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-inter);
+    color: var(--text-slate-700);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding-top: 80px; /* Offset for fixed navbar */
+}
+
+/* Common Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Global Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: var(--primary-amber);
+    color: white;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-amber-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.23);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--text-slate-600);
+    padding: 12px 24px;
+    transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    color: var(--primary-amber);
+}
+
+/* Utility classes for layout when pure css is easier than writing repeated specific structures */
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
