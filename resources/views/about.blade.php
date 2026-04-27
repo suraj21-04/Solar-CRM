@@ -21,7 +21,7 @@
         <div class="about-grid">
             <div class="about-image-wrapper">
                 <img class="about-image"
-                    src="https://images.unsplash.com/photo-1548613052-1925b4ff025b?q=80&w=800&auto=format&fit=crop"
+                    src="https://img.freepik.com/free-photo/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_627829-4806.jpg?semt=ais_hybrid&w=740&q=80"
                     alt="Solar Team">
             </div>
             <div class="about-text">

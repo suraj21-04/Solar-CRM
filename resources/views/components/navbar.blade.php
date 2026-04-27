@@ -102,15 +102,23 @@
                 @guest
                     <a href="{{ route('login') }}" class="btn-secondary">Sign In</a>
                     <a href="{{ route('register') }}" class="btn-primary">Sign Up</a>
+                @else
+                    <a href="{{ route('dashboard') }}" class="btn-primary">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
+                        @csrf
+                        <button type="submit" class="btn-secondary" style="cursor: pointer;">Log Out</button>
+                    </form>
                 @endguest
             </div>
 
             <!-- Mobile menu button -->
             <button id="mobile-menu-btn" class="mobile-menu-btn">
-                <svg id="menu-icon-open" style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg id="menu-icon-open" style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                <svg id="menu-icon-close" style="width: 24px; height: 24px; display: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg id="menu-icon-close" style="width: 24px; height: 24px; display: none;" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -126,7 +134,8 @@
             <div>
                 <button id="mobile-features-btn" class="mobile-features-btn">
                     Features
-                    <svg id="mobile-features-icon" style="width: 16px; height: 16px; transition: transform 0.2s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="mobile-features-icon" style="width: 16px; height: 16px; transition: transform 0.2s;"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
@@ -148,6 +157,14 @@
             @guest
                 <a href="{{ route('login') }}" class="btn-mobile-secondary">Sign In</a>
                 <a href="{{ route('register') }}" class="btn-mobile-primary">Sign Up</a>
+            @else
+                <a href="{{ route('dashboard') }}" class="btn-mobile-primary"
+                    style="width: 100%; text-align: center; margin-bottom: 8px; display: block;">Dashboard</a>
+                <form method="POST" action="{{ route('logout') }}" style="width: 100%; margin: 0;">
+                    @csrf
+                    <button type="submit" class="btn-mobile-secondary" style="width: 100%; cursor: pointer;">Log
+                        Out</button>
+                </form>
             @endguest
         </div>
     </div>

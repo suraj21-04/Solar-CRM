@@ -1,28 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', fn () => view('home'))->name('home');
+Route::get('/about',   fn () => view('about'))->name('about');
+Route::get('/pricing', fn () => view('pricing'))->name('pricing');
+Route::get('/contact', fn () => view('contact'))->name('contact');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::middleware('guest')->group(function () {
+    Route::get('/login',    [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login',   [AuthController::class, 'login']);
+    Route::get('/register',  [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+});
 
-Route::get('/pricing', function () {
-    return view('pricing');
-})->name('pricing');
+Route::get('/forgot-password', fn () => back())->name('password.request');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
-// Stub routes for auth links
-Route::get('/login', function () {
-    return 'Login Page';
-})->name('login');
-
-Route::get('/register', function () {
-    return 'Register Page';
-})->name('register');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
